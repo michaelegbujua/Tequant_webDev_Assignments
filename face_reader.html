@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,4 +139,146 @@
         
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript face reader</title>
+
+    <Style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            background-color: "f0f0f0";
+
+        }
+
+        img{
+            width: 200px;
+            height: auto;
+        }
+
+        .containerv{
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+
+        }
+
+
+    </Style>
+
+</head>
+
+<body style="background-color: #0a0a0a;">
+    <section class="containerv">
+        
+        <form action="">
+            <h1 style="color: whitesmoke; font-size: xx-large;">Bio-data</h1>
+            <input type="text" placeholder="First Name" style="width: 500px; border-radius: 8px; " required> <br>
+            <input type="text" placeholder="Last Name" style="width: 500px; border-radius: 8px;" required> <br>
+            <input type="text" placeholder="Address" style="width: 500px; border-radius: 8px;"> <br>
+
+             <label for="state">
+                            <select name="state" id="state" style="width: 500px; border-radius: 8px;">
+                                <option value="State">State of Origin</option>
+                                <option value="State">Abia</option>
+                                <option value="State">Adamawa</option>
+                                <option value="State">Akwa Ibom</option>
+                                <option value="State">Anambra</option>
+                                <option value="State">Bauchi</option>
+                                <option value="State">Bayelsa</option>
+                                <option value="State">Benue</option>
+                                <option value="State">Borno</option>
+                                <option value="State">Cross River</option>
+                                <option value="State">Delta</option>
+                                <option value="State">Ebonyi</option>
+                                <option value="State">Edo</option>
+                                <option value="State">Enugu</option>
+                                <option value="State">Gombe</option>
+                                <option value="State">Imo</option>
+                                <option value="State">Jigawa</option>
+                                <option value="State">Kaduna</option>
+                                <option value="State">Katsina</option>
+                                <option value="State">Kano</option>
+                                <option value="State">Kebbi</option>
+                                <option value="State">Kwara</option>
+                                <option value="State">Lagos</option>
+                                <option value="State">Nasarawa</option>
+                                <option value="State">Niger</option>
+                                <option value="State">Ogun</option>
+                                <option value="State">Ondo</option>
+                                <option value="State">Osun</option>
+                                <option value="State">Oyo</option>
+                                <option value="State">Plateau</option>
+                                <option value="State">Rivers</option>
+                                <option value="State">Sokoto</option>
+                                <option value="State">Taraba</option>
+                                <option value="State">Yobe</option>
+                                <option value="State">Zamfara</option>
+                                <option value="State">FCT</option>
+                            </select>
+                        </label> <br>
+                        
+                        <label for="male" style="color: whitesmoke;">Male</label>
+                        <input type="radio" id="male" name="gender"> 
+
+                        <label for="female" style="color:  whitesmoke;">Female</label>
+                        <input type="radio" id="female" name="gender"> <br>
+
+                        <input type="submit"  style="width: 180px; height: 30px; color: gold; border-radius: 8px;">
+        </form>
+        
+    </section>
+
+
+    <section class="containerv" >
+
+        <div>
+
+            
+            <h1 style="color: whitesmoke; font-size: xx-large;"> Select a face</h1>
+            <button id="happyBtn" style="background-color: gold; color: whitesmoke; width: 100px; height: 45px; border-radius: 12px;"> Happy</button>
+            <button id="goofyBtn" style="background-color: gold; color: whitesmoke; width:  100px;height: 45px; border-radius: 12px;"> Goofy</button>
+                <div id="faceDisplay">
+                    <img id="faceImage" src="image/mic_photo.jpg" alt="Default Image" style="border-radius: 10px;">
+
+                </div>
+
+
+                    <script>
+                        // Select buttons and the image element
+                        const happyBtn = document.getElementById('happyBtn');
+                        const goofyBtn = document.getElementById('goofyBtn');
+                        const faceImage = document.getElementById('faceImage');
+
+                        // Add event listener for happy button
+                        happyBtn.addEventListener('click', () =>{
+                            faceImage.src = 'image/mic_smile.jpg'; //replace with the url of smiling face
+                            faceImage.alt = 'Smiling Face';
+                        });
+
+                        // Add event listener for goofy button
+                        goofyBtn.addEventListener('click', () =>{
+                            faceImage.src = 'image/mic_goofy.jpg'; //replace with th url of goofy face
+                            faceImage.alt = 'Goofy face';
+
+                        });
+
+                        //default image  is displayed on load
+                    </script>
+        </div>
+                
+          
+    </section>
+
+        
+</body>
+
+>>>>>>> 5107891a7473d88ef8e429832ffdbbe9fa1eeb77
 </HTml>
