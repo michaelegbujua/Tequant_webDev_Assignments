@@ -8,13 +8,31 @@
 
 
     <style>
-        body{
+         body {
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
             height: 100vh;
+            font-family: Arial, sans-serif;
+        }
 
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+
+        th {
+            background-color: #444;
+        }
+
+
+        h1 {
+            color: blue;
+            font-size: xx-large;
         }
 
         .containerv{
@@ -23,10 +41,13 @@
             align-items: center;
         }
 
-        table{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            background-color: #534e4e;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
 
@@ -36,18 +57,24 @@
 </head>
 <body>
 
-    <section >
+    <section class="containerv">
         <h1 style="color: blue; font-size: xx-large;"> Students' Maths Grading System</h1>
-            <table style="background-color: #534e4e; color: white; border-radius: 10px;">
+            <table >
+             
+                <thead>
+                    <tr>
+                        <th >Student Name</th>
+                        <th >Score</th>
+                        <th> Grade</th>
+                    </tr> 
+              </thead>
                 
-                <th >
-                    Score
-                </th>
-                    
+                <tbody id="studentTableBody">
+                    <!-- student data will be inserted here dynamically-->
 
-                     <tr id="score" >
-                            <td id="score"> </td>
-                        </tr>
+                </tbody>
+                
+                        
             </table>
             
     </section>
@@ -55,31 +82,55 @@
     <script>
 
 
-
-        score = Number(prompt('Enter your Math Score'))
+       let stud_name = prompt("Enter Student's Name" );
+        let score = Number(prompt('Enter your Math Score'));
         
-        //if statement
+        //if statement to validate score and calculate grade based on score entered
+
+         let grade ;   //initialise grade as an empty variable
         if(score >=70 && score <=100){
-            document.write('Grade is :'+ 'A')
+            grade = 'A';
         }
         else if(score >=60 && score<= 69){
-            document.write('Grade is :'+ 'B')
+            grade = 'B';
         }
         else if(score >=50 && score <= 59){
-            document.write('Grade is :'+ 'C')
+            grade = 'C';
         }
         else if(score >=46 && score<=49){
-            document.write('Grade is :'+ 'D')
+            grade ='D';
         }
         else if(score>=45 && score<=40){
-            document.write('Grade is :'+ 'E')
+            grade = 'E';
         }
         else if(score>= 0 && score<=39){
-            document.write('Grade is :'+ 'F')
+            grade = 'F';
         }
         else{
-            document.write('Invalid Score Entered!!!')
+            grade = 'Invalid Score Entered!!!';
         }
+
+
+
+        // add data to the empty html table
+        let tableBody = document.getElementById("studentTableBody");
+        let row = document.createElement('tr');
+
+        let nameCell = document.createElement('td');
+        nameCell.textContent = stud_name;
+
+        let scoreCell = document.createElement('td');
+        scoreCell.textContent = score ;
+
+        let gradeCell = document.createElement('td');
+        gradeCell.textContent = grade ;
+
+
+        row.appendChild(nameCell);
+        row.appendChild(scoreCell);
+        row.appendChild(gradeCell);
+
+        tableBody.appendChild(row);
     </script>
     
 </body>
